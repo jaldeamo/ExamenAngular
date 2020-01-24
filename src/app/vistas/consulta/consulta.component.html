@@ -1,0 +1,41 @@
+<!-- <p>consulta works!</p> -->
+ <div class="container">
+  <div class="row">
+    <div class="col-6 offset-3"><br/><br/>
+      <div align="center">
+        <h3>Aplicar IPC al salario</h3><br/>
+      </div>
+        <form (submit)="alta()">
+    <label for="ipc">Ingrese IPC para el cálculo: </label>
+    <input class="form-control" type="text" autocomplete="off" name="ipc"
+              id="ipc" [(ngModel)]="ipcForm" #ipc="ngModel">
+    <br/>
+  <div align="center">
+  <button class="btn btn-primary mr-3" type="submmit">Guardar</button>
+  <button class="btn btn-secondary" type="reset">Borrar</button>
+  </div>
+  </form><br/>
+  <div align="center">
+  <table>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Salario actualizado</th>
+        <th>Edad</th>
+        <th>Perfil</th>
+    </tr>
+    <tr *ngFor="let linea of filasemp">
+        <td>{{linea.id}}</td>
+        <td>{{linea.employee_name}}</td>
+        <td>{{linea.employee_salary}}</td>
+        <!-- {{salarioIPC}}-->
+        <td>{{linea.employee_age}}</td>
+        <td>{{linea.profile_image}}</td>
+    </tr>
+</table>
+</div>
+ </div>
+  </div>
+  </div> 
+  <router-outlet></router-outlet> 
+
